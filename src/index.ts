@@ -1,18 +1,14 @@
-type KeyValuePair<K, V> = {
+// Graciously taken from https://github.com/sindresorhus/type-fest/tree/main
+type ArrayTail<T> = T extends readonly [unknown, ...infer Tail] ? Tail : [];
+
+export type KeyValuePair<K, V> = {
   key: K
   value: V
 }
 type KeyValuePairList<K = any, V = any> = KeyValuePair<K, V>[]
 
 type ExtractKeys<T extends KeyValuePairList> = T[number]['key']
-type ExtractValues<T extends KeyValuePairList, K> = T extends KeyValuePairList<
-  infer Key,
-  infer Value
->
-  ? K extends Key
-    ? Value
-    : never
-  : never
+type ExtractValues<T extends KeyValuePairList, K> = T[0] extends KeyValuePair<K, infer Value> ? Value : T[0] extends undefined ? never : ExtractValues<ArrayTail<T>, K>
 
 export class ConstrainedMap<T extends KeyValuePairList> extends Map<
   ExtractKeys<T>,
