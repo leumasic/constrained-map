@@ -9,10 +9,10 @@ npm install constrained-map
 ## Usage
 
 ```ts
-import { KeyValuePair, ConstrainedMap } from 'constrained-map'
+import { ConstrainedMap } from 'constrained-map'
 
 class Request { /* ... */ }
-const map = new ConstrainedMap<[KeyValuePair<Request, number>, KeyValuePair<string, string>]>
+const map = new ConstrainedMap<[[Request, number], [string, string]]>
 
 const requestKey = new Request()
 map.set(requestKey, 1)
