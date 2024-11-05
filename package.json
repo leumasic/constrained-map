@@ -1,6 +1,6 @@
 {
   "name": "constrained-map",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "TypeScript utility extending Map with strict key-value type constraints",
   "keywords": [
     "typescript",
