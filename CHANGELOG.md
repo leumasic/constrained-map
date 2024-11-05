@@ -1,5 +1,11 @@
 # constrained-map
 
+## 0.0.3
+
+### Patch Changes
+
+- [#3](https://github.com/leumasic/constrained-map/pull/3) [`c479cb7`](https://github.com/leumasic/constrained-map/commit/c479cb70d37974cf68c363148f66312a710dac4d) Thanks [@leumasic](https://github.com/leumasic)! - constructor enhancements
+
 ## 0.0.2
 
 ### Patch Changes
